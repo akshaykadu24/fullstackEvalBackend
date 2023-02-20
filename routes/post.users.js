@@ -5,11 +5,16 @@ const jwt = require("jsonwebtoken")
 
 const postRoutes = express.Router()
 
+
 postRoutes.get("/",async(req,res)=>{
+
+    let dev = req.query
+
+console.log(req.query)
     
     try {
         let user = req.body.user
-        let users = await PostModel.find({user})
+        let users = await PostModel.find(dev.device?{device:dev.device}:{})
         
         res.send(users)
     } catch (err) {
