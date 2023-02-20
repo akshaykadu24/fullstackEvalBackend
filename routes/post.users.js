@@ -14,7 +14,7 @@ console.log(req.query)
     
     try {
         let user = req.body.user
-        let users = await PostModel.find(dev.device?{device:dev.device}:{})
+        let users = await PostModel.find(dev.device?{device:dev.device}:{user})
         
         res.send(users)
     } catch (err) {
