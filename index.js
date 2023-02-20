@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.send("welcome ")
+    res.send("welcome to backend")
 })
 app.use("/user",userRoutes)
 app.use(auth)
